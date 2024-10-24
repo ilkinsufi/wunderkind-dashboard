@@ -120,8 +120,6 @@ export default function Page() {
           const response = await uploadFile(formData);
 
           if (response) {
-            console.log('Yüklenecek img name: ', response.message);
-
             await updateImgOnServer({
               image: response.message,
             });

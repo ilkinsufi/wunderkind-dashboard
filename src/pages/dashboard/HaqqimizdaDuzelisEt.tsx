@@ -22,7 +22,6 @@ interface formattedTranslationsProps {
 
 export default function Page() {
   const { id } = useParams();
-  console.log(id);
 
   const { patchData } = usePatch(`/story/storyYear/${id}`);
 
@@ -39,7 +38,6 @@ export default function Page() {
 
   const { data, error, hasData } = useApi(`/story/getStoryYearWithTranslation/${id}`, language);
 
-  console.log('data: ', data);
 
   useEffect(() => {
     if (hasData && data && !hasFetched) {

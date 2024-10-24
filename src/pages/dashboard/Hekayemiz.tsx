@@ -97,7 +97,6 @@ export default function Page() {
 
           if (response) {
             setCoreImgName(response.message);
-            console.log('Yüklenecek img name: ', response.message);
 
             await updateImgOnServer({
               image: response.message,

@@ -70,7 +70,6 @@ export const Logo = forwardRef<HTMLDivElement, LogoProps>(
       </svg>
     );
 
-    console.log(logo);
 
     return (
       <NoSsr
