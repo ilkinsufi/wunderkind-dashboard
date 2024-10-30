@@ -50,12 +50,6 @@ export default function Page() {
     // eslint-disable-next-line
   }, [hasData]);
 
-  // tek sekli cek
-  const { data: singleImage } = useApi(
-    'file/getFile/1729678857311_wunderkind_Ed_Wingate_Unsplash.jpg',
-    language
-  );
-
   // serverdeki sekli update
   const { patchData: updateImgOnServer } = usePatch(`/story/${coreID}`);
 
@@ -96,10 +90,10 @@ export default function Page() {
           const response = await uploadFile(formData);
 
           if (response) {
-            setCoreImgName(response.message);
+            setCoreImgName(response[0]);
 
             await updateImgOnServer({
-              image: response.message,
+              image: response[0],
             });
             await refetch();
             router.refresh();
@@ -191,8 +185,10 @@ export default function Page() {
         <Box
           sx={{
             borderRadius: '14px',
+            border: 'none',
             textAlign: 'center',
             width: '100%',
+            height: '300px',
             // height: '400px',
             objectFit: 'cover',
             overflow: 'hidden',
@@ -222,7 +218,6 @@ export default function Page() {
               sx={{
                 width: '100%',
                 height: '100%',
-                border: '1px solid #ddd',
                 borderRadius: '0px',
               }}
             />

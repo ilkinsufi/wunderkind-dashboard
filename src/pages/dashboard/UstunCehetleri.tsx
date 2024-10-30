@@ -121,7 +121,7 @@ export default function Page() {
 
           if (response) {
             await updateImgOnServer({
-              image: response.message,
+              image: response[0],
             });
             await refetch();
             router.refresh();
@@ -292,7 +292,7 @@ export default function Page() {
             borderRadius: '14px',
             textAlign: 'center',
             width: '100%',
-            // height: '400px',
+            height: '300px',
             objectFit: 'cover',
             overflow: 'hidden',
           }}
@@ -321,7 +321,6 @@ export default function Page() {
               sx={{
                 width: '100%',
                 height: '100%',
-                border: '1px solid #ddd',
                 borderRadius: '0px',
               }}
             />

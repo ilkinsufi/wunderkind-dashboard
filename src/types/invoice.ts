@@ -6,8 +6,6 @@ export type IInvoiceTableFilters = {
   name: string;
   status: string;
   service: string[];
-  endDate: IDatePickerControl;
-  startDate: IDatePickerControl;
 };
 
 export type IInvoiceItem = {

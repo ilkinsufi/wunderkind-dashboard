@@ -19,7 +19,6 @@ interface formattedTranslationsProps {
   en: { content: string; year: number };
   ru: { content: string; year: number };
 }
-
 export default function Page() {
   const { id } = useParams();
 
@@ -37,7 +36,6 @@ export default function Page() {
   });
 
   const { data, error, hasData } = useApi(`/story/getStoryYearWithTranslation/${id}`, language);
-
 
   useEffect(() => {
     if (hasData && data && !hasFetched) {

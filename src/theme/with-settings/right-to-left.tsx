@@ -23,7 +23,6 @@ export function RTL({ children, direction }: RTLProps) {
   }, [direction]);
 
   if (direction === 'rtl') {
-    // deleted
     return <></>;
   }
 

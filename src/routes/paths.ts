@@ -54,6 +54,7 @@ export const paths = {
   mehsullar: {
     root: `/mehsullar`,
     list: `/mehsullar/list`,
+    mehsulelave: `/mehsullar/mehsulelave`,
     yasaraligi: `/mehsullar/yas-araligi`,
   },
   xeberler: {

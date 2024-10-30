@@ -21,6 +21,7 @@ const UstunCehetleri = lazy(() => import('src/pages/dashboard/UstunCehetleri'));
 
 // mehsullar
 const MehsullarList = lazy(() => import('src/pages/dashboard/MehsullarList'));
+const MehsulElave = lazy(()=> import('src/pages/dashboard/MehsulElave'))
 const YasAraligi = lazy(() => import('src/pages/dashboard/YasAraligi'));
 const XeberlerList = lazy(() => import('src/pages/dashboard/XeberlerList'));
 
@@ -69,6 +70,7 @@ export const dashboardRoutes = [
         path: 'mehsullar',
         children: [
           { path: 'list', element: <MehsullarList /> },
+          { path: 'mehsulelave', element: <MehsulElave /> },
           { path: 'yas-araligi', element: <YasAraligi /> },
         ],
       },

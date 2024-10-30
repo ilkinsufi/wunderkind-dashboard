@@ -1,5 +1,5 @@
 import { Alert, Box, Button, TextField } from '@mui/material';
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { toast } from 'sonner';
 import usePost from 'src/api/usePost';
@@ -50,7 +50,7 @@ export default function Page() {
     if (language === 'az') setLanguage(Language.EN);
     else if (language === 'en') setLanguage(Language.RU);
     else handleSubmit();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line
   }, [language, translations, year, validateFields]);
 
   const prevLanguage = useCallback(() => {
@@ -145,12 +145,6 @@ export default function Page() {
               width: { xs: '77%', sm: '92%' },
             }}
           >
-            {contentTouched && translations[language].content.trim() === '' && (
-              <Alert severity="error" sx={{ width: '100%' }}>
-                {getAlertMessage()}
-              </Alert>
-            )}
-
             <TextField
               fullWidth
               size="medium"
@@ -171,7 +165,11 @@ export default function Page() {
                 </Button>
               </div>
 
-              <Button onClick={nextLanguage} variant="contained">
+              <Button
+                onClick={nextLanguage}
+                variant="contained"
+                disabled={!validateFields()} // Disable button if fields are not valid
+              >
                 {language === 'ru' ? 'Yaddaşa ver' : 'İrəli'}
               </Button>
             </div>
