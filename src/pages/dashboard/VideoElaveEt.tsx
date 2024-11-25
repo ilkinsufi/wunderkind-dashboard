@@ -72,8 +72,8 @@ export default function Page() {
       </Helmet>
       <DashboardContent maxWidth="xl">
         <CustomBreadcrumbs
-          heading="Əlaqə"
-          links={[{ name: 'Əlaqə məlumatları' }]}
+          heading="Yeni video əlavə et"
+          links={[{ name: 'Bütün videolar', href: paths.videolar.list }, { name: 'Yeni video' }]}
           sx={{ mb: { xs: 3, md: 5 } }}
         />
         <Box
@@ -86,44 +86,7 @@ export default function Page() {
             gap: 2,
             alignItems: 'end',
             justifyContent: 'center',
-            width: '100%',
-          }}
-        >
-          <Stack width="100%" padding={1}>
-            <Form
-              methods={methods}
-              // onSubmit={() => onSubmit}
-            >
-              <TextField
-                fullWidth
-                sx={{ width: '100%' }}
-                id="outlined-basic"
-                label="Telefon nömrəsi"
-                variant="outlined"
-                type="number"
-              />
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 2 }}
-                id="outlined-basic"
-                label="Email"
-                variant="outlined"
-              />
-            </Form>
-          </Stack>
-        </Box>
-        <Box
-          sx={{
-            mt: 3,
-            p: 2,
-            borderRadius: 2,
-            boxShadow: 4,
-            display: 'flex',
-            flexDirection: 'column',
-            gap: 2,
-            alignItems: 'end',
-            justifyContent: 'center',
-            width: '100%',
+            width: { xs: '77%', sm: '90%' },
           }}
         >
           <Stack spacing={1.5} width="100%" padding={1}>
@@ -132,49 +95,13 @@ export default function Page() {
               // onSubmit={() => onSubmit}
             >
               <Typography sx={{ mb: 1 }} variant="subtitle2">
-                Sosial şəbəkələr
+                YouTube url link
               </Typography>
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 1 }}
-                id="outlined-basic"
-                label="Instagram"
-                variant="outlined"
-              />
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 2 }}
-                id="outlined-basic"
-                label="Facebook"
-                variant="outlined"
-              />
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 2 }}
-                id="outlined-basic"
-                label="Youtube"
-                variant="outlined"
-              />
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 2 }}
-                id="outlined-basic"
-                label="Tiktok"
-                variant="outlined"
-              />
-              <TextField
-                fullWidth
-                sx={{ width: '100%', mt: 2 }}
-                id="outlined-basic"
-                label="Telegram"
-                variant="outlined"
-              />
+              <TextField fullWidth sx={{width: '100%', mt: 1}} id="outlined-basic" label="Linki bura yazın" variant="outlined" />
             </Form>
           </Stack>
-        </Box>
-        <div className="flex mt-4 items-center justify-end">
           <Button variant="contained">Yaddaşa ver</Button>
-        </div>
+        </Box>
       </DashboardContent>
     </>
   );

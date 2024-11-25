@@ -60,7 +60,7 @@ export function InvoiceTableRowCustom({ item, refetch }: Props) {
       refetch();
       // router.push(paths.haqqinda.insanlarnedeyir);
     } catch (error) {
-      toast.error('Xəta baş verdi! Məlumat göndərilmədi.');
+      toast.warning('Maksimum 3 məhsul əlavə edilə bilər');
     }
   };
   return (
@@ -91,7 +91,7 @@ export function InvoiceTableRowCustom({ item, refetch }: Props) {
         {item.difficulty === 'EASY' ? 'Asan' : item.difficulty === 'MEDIUM' ? 'Orta' : 'Çətin'}
       </TableCell>
 
-      <TableCell>{item.ageGroup.age} yaş</TableCell>
+      <TableCell>{item?.ageGroup?.age} yaş</TableCell>
 
       <TableCell align="center">{item.price} ₼</TableCell>
       <TableCell align="center">
@@ -129,7 +129,7 @@ export function InvoiceTableRowCustom({ item, refetch }: Props) {
             onClick={() => {
               popover.onClose();
 
-              // router.push(`/haqqinda/duzeliset/${deleteId}`);
+              router.push(`/mehsullar/mehsulduzeliset/${deleteId}`);
             }}
           >
             <Iconify icon="solar:pen-bold" />

@@ -21,18 +21,23 @@ const UstunCehetleri = lazy(() => import('src/pages/dashboard/UstunCehetleri'));
 
 // mehsullar
 const MehsullarList = lazy(() => import('src/pages/dashboard/MehsullarList'));
-const MehsulElave = lazy(()=> import('src/pages/dashboard/MehsulElave'))
+const MehsulElave = lazy(() => import('src/pages/dashboard/MehsulElave'));
+const MehsulDuzelisEt = lazy(() => import('src/pages/dashboard/MehsulDuzelisEt'));
 const YasAraligi = lazy(() => import('src/pages/dashboard/YasAraligi'));
 const XeberlerList = lazy(() => import('src/pages/dashboard/XeberlerList'));
+const XeberElaveEt = lazy(() => import('src/pages/dashboard/XeberElave'));
 
 // fotoqalereya
 const Fotoqalereya = lazy(() => import('src/pages/dashboard/Fotoqalereya'));
+const FotoElaveEt = lazy(() => import('src/pages/dashboard/FotoElaveEt'));
 
 // videolar
 const Videolar = lazy(() => import('src/pages/dashboard/Videolar'));
+const VideoElaveEt = lazy(() => import('src/pages/dashboard/VideoElaveEt'));
 
 // elaqe
 const FAQ = lazy(() => import('src/pages/dashboard/FAQ'));
+const FAQElaveEt = lazy(() => import('src/pages/dashboard/FAQElaveEt'));
 const Elaqe = lazy(() => import('src/pages/dashboard/Elaqe'));
 
 // ----------------------------------------------------------------------
@@ -71,6 +76,7 @@ export const dashboardRoutes = [
         children: [
           { path: 'list', element: <MehsullarList /> },
           { path: 'mehsulelave', element: <MehsulElave /> },
+          { path: 'mehsulduzeliset/:id', element: <MehsulDuzelisEt /> },
           { path: 'yas-araligi', element: <YasAraligi /> },
         ],
       },
@@ -81,7 +87,10 @@ export const dashboardRoutes = [
     children: [
       {
         path: 'xeberler',
-        children: [{ path: 'list', element: <XeberlerList /> }],
+        children: [
+          { path: 'list', element: <XeberlerList /> },
+          { path: 'xeberelaveet', element: <XeberElaveEt /> },
+        ],
       },
     ],
   },
@@ -90,7 +99,10 @@ export const dashboardRoutes = [
     children: [
       {
         path: 'fotoqalereya',
-        children: [{ path: 'list', element: <Fotoqalereya /> }],
+        children: [
+          { path: 'list', element: <Fotoqalereya /> },
+          { path: 'fotoelaveet', element: <FotoElaveEt /> },
+        ],
       },
     ],
   },
@@ -99,7 +111,10 @@ export const dashboardRoutes = [
     children: [
       {
         path: 'videolar',
-        children: [{ path: 'list', element: <Videolar /> }],
+        children: [
+          { path: 'list', element: <Videolar /> },
+          { path: 'videoelaveet', element: <VideoElaveEt /> },
+        ],
       },
     ],
   },
@@ -111,6 +126,7 @@ export const dashboardRoutes = [
         children: [
           { path: 'elaqe', element: <Elaqe /> },
           { path: 'faq', element: <FAQ /> },
+          { path: 'faqelaveet', element: <FAQElaveEt /> },
         ],
       },
     ],

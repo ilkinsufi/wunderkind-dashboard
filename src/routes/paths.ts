@@ -55,23 +55,28 @@ export const paths = {
     root: `/mehsullar`,
     list: `/mehsullar/list`,
     mehsulelave: `/mehsullar/mehsulelave`,
+    mehsulduzeliset: (id: string) => `/mehsullar/mehsulduzeliset/${id}`,
     yasaraligi: `/mehsullar/yas-araligi`,
   },
   xeberler: {
     root: `/xeberler`,
     list: `/xeberler/list`,
+    xeberelaveet: `/xeberler/xeberelaveet`,
   },
   fotoqalereya: {
     root: `/fotoqalereya`,
     list: `/fotoqalereya/list`,
+    fotoelaveet: `/fotoqalereya/fotoelaveet`,
   },
   videolar: {
     root: `/videolar`,
     list: `/videolar/list`,
+    videoelaveet: `/videolar/videoelaveet`,
   },
   elaqe: {
     root: `/elaqe`,
     elaqe: `/elaqe/elaqe`,
     faq: `/elaqe/faq`,
+    faqelaveet: `/elaqe/faqelaveet`,
   },
 };
